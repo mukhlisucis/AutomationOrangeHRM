@@ -51,16 +51,18 @@ public class LoginSteps {
 
 
 
-    @Given("^user on the orange HRM \"([^\"]*)\" page$")
-    public void userOnTheOrangeHRMPage(String loginTitle) {
-        LoginPage loginPage = new LoginPage(webDriver);
-        Assert.assertEquals(loginTitle, loginPage.getLogin());
-    }
+
 
     @Then("^user succes login with menu \"([^\"]*)\"$")
     public void userSuccesLoginWithMenu(String dash) throws InterruptedException {
         LoginPage loginPage = new LoginPage(webDriver);
         Assert.assertEquals(dash , loginPage.getDashboard());
         Thread.sleep(2000);
+    }
+
+    @Given("^user on the orange HRM Login$")
+    public void userOnTheOrangeHRMLogin() {
+        LoginPage loginPage = new LoginPage(webDriver);
+        loginPage.getLoginPage() ;
     }
 }

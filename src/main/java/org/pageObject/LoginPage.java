@@ -14,9 +14,9 @@ public class LoginPage {
     }
 
     @FindBy(xpath = "//h5[@class='oxd-text oxd-text--h5 orangehrm-login-title']")
-    private WebElement loginPage ;
-    public String getLogin(){
-        return loginPage.getText() ;
+    private WebElement pageLogin ;
+    public boolean getLoginPage(){
+        return pageLogin.isDisplayed() ;
     }
 
     @FindBy(xpath = "//input[@name='username']")
