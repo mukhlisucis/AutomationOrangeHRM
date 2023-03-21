@@ -3,7 +3,7 @@
 
     @Login @Postive
       Scenario: Login with correct username and password
-      Given user on the orange HRM "Login" page
+      Given user on the orange HRM Login
       When user click username field
       And user input username "Admin"
       And user click password field
