@@ -13,7 +13,7 @@ public class Hooks {
         System.setProperty("webdriver.chrome.driver",
                 System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
         webDriver  = new ChromeDriver();
-        String appUrl = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+        String appUrl = "https://opensource-demo.orangehrmlive.com/index.php/auth/login";
         webDriver.get(appUrl);
         webDriver.manage().window().maximize();
     }
