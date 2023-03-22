@@ -50,4 +50,21 @@ public class LoginPage {
         return dashboard.getText() ;
     }
 
+    @FindBy(xpath = "//p[@class='oxd-text oxd-text--p oxd-alert-content-text']")
+    private WebElement invalidLogin;
+    public String getInvalidNotif(){
+        return invalidLogin.getText() ;
+    }
+
+    @FindBy(xpath = "//form[@class='oxd-form']/div[1]//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
+    private WebElement notifUsername ;
+    public String getNotifUsername(){
+        return notifUsername.getText() ;
+    }
+    @FindBy(xpath = "//form[@class='oxd-form']/div[2]//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
+    private WebElement notifPass ;
+    public String getNotifPass(){
+        return notifPass.getText();
+    }
+
 }

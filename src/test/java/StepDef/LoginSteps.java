@@ -35,7 +35,7 @@ public class LoginSteps {
         loginPage.clickPassword();
     }
 
-    @And("^user inpur password \"([^\"]*)\"$")
+    @And("^user input password \"([^\"]*)\"$")
     public void userInpurPassword(String password) throws InterruptedException {
         LoginPage loginPage = new LoginPage(webDriver) ;
         loginPage.setPassword(password);
@@ -64,5 +64,23 @@ public class LoginSteps {
     public void userOnTheOrangeHRMLogin() {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.getLoginPage() ;
+    }
+
+    @Then("^get notification \"([^\"]*)\"$")
+    public void getNotification(String notif) {
+        LoginPage loginPage = new LoginPage(webDriver);
+        Assert.assertEquals(notif , loginPage.getInvalidNotif());
+    }
+
+    @Then("^field username get notif \"([^\"]*)\"$")
+    public void fieldUsernameGetNotif(String notifUser) {
+        LoginPage loginPage = new LoginPage(webDriver) ;
+        Assert.assertEquals(notifUser , loginPage.getNotifUsername());
+    }
+
+    @Then("^field password get notif \"([^\"]*)\"$")
+    public void fieldPasswordGetNotif(String notifPass) {
+        LoginPage loginPage = new LoginPage(webDriver) ;
+        Assert.assertEquals(notifPass , loginPage.getNotifPass());
     }
 }
